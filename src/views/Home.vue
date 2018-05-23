@@ -54,7 +54,6 @@ export default {
 
 <style>
   #home {
-    border: 1px solid red;
     max-width: 100%;
   }
 </style>
