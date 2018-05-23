@@ -16,6 +16,7 @@
         <b-input id="password" type="password" v-model="confirmPass"></b-input>
       </div>
       <small v-if="(password !== confirmPass) && toRegister">password do not match</small> <br>
+      <small v-if="password.length < 6">password minimum has 6 characters length</small> <br>
       <b-btn class="mt-2" variant="primary" @click="login">Login</b-btn>
       <b-btn class="mt-2 ml-2" @click="regPage">Register</b-btn>
     </b-form>
@@ -43,7 +44,7 @@ export default {
       if (!this.toRegister) {
         this.toRegister = true
       } else if (this.password === this.confirmPass) {
-        if (this.password.length > 6) {
+        if (this.password.length >= 6) {
           let self = this
           axios
             .post(

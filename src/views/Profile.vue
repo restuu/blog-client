@@ -3,7 +3,9 @@
     <h1>Wellcome</h1>
     <h3>{{ fullname }}</h3>
 
-    <h6>Saved article(s)</h6>
+    <FormInput/>
+
+    <h6>Saved article(s):</h6>
     <ArticleCard
       v-if="savedArticles.length > 0"
       v-for="article in savedArticles"
@@ -21,6 +23,7 @@
 import axios from 'axios'
 import axiosErrorHandling from '@/assets/js/axios.error'
 import ArticleCard from '@/components/ArticleCard.vue'
+import FormInput from '@/components/FormInput.vue'
 
 export default {
   data () {
@@ -31,7 +34,8 @@ export default {
   },
 
   components: {
-    ArticleCard
+    ArticleCard,
+    FormInput
   },
 
   created () {
