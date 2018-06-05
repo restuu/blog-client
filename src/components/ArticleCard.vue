@@ -4,7 +4,9 @@
     <b-img id="imageArticle" class="col-sm-3 mb-2" :src="imageUrl" :alt="title"/>
 
     <b-card class="mb-2 col-sm-9">
-      <h3 class="">{{ title }}</h3>
+      <b-link :to="{name: 'articles', query: {id}, params: { article }}">
+        <h3>{{ title }}</h3>
+      </b-link> 
 
       <p v-if="contentMore"> {{ content }}  
         <b-link class="text-muted show-less" @click="showLess">show less</b-link>
@@ -30,7 +32,8 @@ export default {
     content: String,
     id: String,
     imageUrl: String,
-    button: false
+    button: false,
+    article: Object
   },
 
   data () {
@@ -60,7 +63,6 @@ export default {
           alert(data.message)
         })
         .catch(err => axiosErrorHandling(err))
-        
     },
 
     showMore () {

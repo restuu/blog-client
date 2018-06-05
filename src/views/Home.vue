@@ -8,7 +8,9 @@
       :id="article._id"
       :imageUrl="article.imageUrl"
       :button="true"
+      :article="article"
       />
+      <!-- <router-view></router-view> -->
   </b-container>
 </template>
 

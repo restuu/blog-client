@@ -13,6 +13,7 @@
       <b-form-file v-model="image" placeholder="Choose an image..."></b-form-file>
       <b-btn variant="success" class="mt-2" @click="postArticle">Submit Post</b-btn>
     </b-form>
+    <b-progress v-show="counter !== max" :value="counter" :max="max" show-progress animated></b-progress>
   </b-card>
 </template>
 
@@ -25,27 +26,37 @@ export default {
     return {
       title: '',
       content: '',
-      image: null
+      image: null,
+      counter: 0,
+      max: 0
     }
   },
 
   methods: {
     postArticle () {
       console.log(this.title, this.content, this.image)
-      let FormData = new FormData()
-      FormData.append('image', this.image)
-      FormData.append('title', this.title)
-      FormData.append('content', this.content)
+      let formData = new FormData()
+      formData.append('image', this.image)
+      formData.append('title', this.title)
+      formData.append('content', this.content)
+      let self = this
       axios({
         url: 'http://localhost:3000/api/users/post',
         method: 'post',
-        data: FormData,
+        data: formData,
         headers: {
           'token': localStorage.token
-        }
+        },
+        onUploadProgress: function (progressEvent) {
+          console.log('progres------------', progressEvent)
+          self.counter = progressEvent.loaded
+          self.max = progressEvent.total
+        },
       })
       .then(({data}) => {
         console.log('after post article', data)
+        alert('Post added')
+        self.$router.push('/')
       })
       .catch(err => axiosErrorHandling(err))
     }
