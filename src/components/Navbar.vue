@@ -54,3 +54,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .dropdown-item.active {
+    background-color: white;
+    color: black
+  }
+
+</style>

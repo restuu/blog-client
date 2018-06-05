@@ -5,8 +5,15 @@
 
     <b-card class="mb-2 col-sm-9">
       <h3 class="">{{ title }}</h3>
-      <p v-if="contentMore"> {{ content }}  <b-link @click="showLess" class="text-muted">show less</b-link>  </p>
-      <p v-else-if="!contentMore"> {{ contentLess }}  <b-link @click="showMore">...</b-link>   </p>
+
+      <p v-if="contentMore"> {{ content }}  
+        <b-link class="text-muted show-less" @click="showLess">show less</b-link>
+      </p>
+
+      <p v-else-if="!contentMore"> {{ contentLess }} 
+        <b-link class="show-more" v-b-popover.hover="'show more'" @click="showMore">...</b-link> 
+      </p>
+
       <b-button v-if="button" @click="saveArticle(id)">Save</b-button>
       <!-- <b-button class="ml-1">Like</b-button> -->
     </b-card>
@@ -74,4 +81,13 @@ export default {
     height: 10rem;
     /* width: 100% */
   }
+
+  .show-less {
+    color: blue !important
+  }
+
+  .show-more {
+    color: blue
+  }
+
 </style>
