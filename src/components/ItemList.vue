@@ -8,8 +8,10 @@
       >
       <b-list-group-item class="col-sm-6">
         <div class="row">
-          <h6 class="ml-3" v-if="article.title.length <= 20">{{ article.title }}</h6>
-          <h6 class="ml-3" v-else>{{ article.title.slice(0, 20) + '...' }}</h6>
+          <router-link :to="{name: 'articles', query: {id: article._id}}">
+            <h6 class="ml-3" v-if="article.title.length <= 20">{{ article.title }}</h6>
+            <h6 class="ml-3" v-else>{{ article.title.slice(0, 20) + '...' }}</h6>
+          </router-link>
           
           <span class="ml-auto mr-3"> 
             <a id="delSaved" href="" 
