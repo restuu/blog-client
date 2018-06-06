@@ -62,7 +62,7 @@ export default {
       let self = this
       axios({
         method: 'get',
-        url: 'http://localhost:3000/api/users',
+        url: 'https://api-blog.restuutomo.me/api/users',
         headers: {
           'token': localStorage.token
         }

@@ -44,7 +44,7 @@ export default {
       let self = this
       let token = localStorage.getItem('token')
       axios({
-        url: `http://localhost:3000/api/users/articles/delete?q=${articleId}`,
+        url: `https://api-blog.restuutomo.me/api/users/articles/delete?q=${articleId}`,
         method: 'delete',
         headers: {
           token

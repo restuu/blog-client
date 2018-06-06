@@ -36,7 +36,7 @@ export default {
       let self = this
       axios
         .get(
-          'http://localhost:3000/api',
+          'https://api-blog.restuutomo.me/api',
         )
         .then(({data}) => {
           console.log('--------response', data.data)

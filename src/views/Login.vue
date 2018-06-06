@@ -48,7 +48,7 @@ export default {
           let self = this
           axios
             .post(
-              'http://localhost:3000/api/register',
+              'https://api-blog.restuutomo.me/api/register',
               {
                 fullname: self.name,
                 email: self.email,
@@ -76,7 +76,7 @@ export default {
         let self = this
         axios
           .post(
-            'http://localhost:3000/api/login',
+            'https://api-blog.restuutomo.me/api/login',
             {
               email: self.email,
               password: self.password

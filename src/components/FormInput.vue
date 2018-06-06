@@ -41,7 +41,7 @@ export default {
       formData.append('content', this.content)
       let self = this
       axios({
-        url: 'http://localhost:3000/api/users/post',
+        url: 'https://api-blog.restuutomo.me/api/users/post',
         method: 'post',
         data: formData,
         headers: {

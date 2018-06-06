@@ -50,7 +50,7 @@ export default {
       console.log('-------------',token)
       axios({
         method: 'put',
-        url: 'http://localhost:3000/api/users/save',
+        url: 'https://api-blog.restuutomo.me/api/users/save',
         data: {
           articleId: id
         },

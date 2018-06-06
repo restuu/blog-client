@@ -29,7 +29,7 @@ export default {
       let self = this
 
       axios({
-        url: `http://localhost:3000/api/articles?id=${articleId}`,
+        url: `https://api-blog.restuutomo.me/api/articles?id=${articleId}`,
         method: 'get',
       })
       .then(({data}) => {
