@@ -92,4 +92,9 @@ export default {
     color: blue
   }
 
+  a {
+    color: brown !important;
+    text-decoration: none !important
+  }
+
 </style>

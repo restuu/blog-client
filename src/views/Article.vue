@@ -46,6 +46,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  a {
+    color: brown !important;
+    text-decoration: none !important
+  }
 </style>
